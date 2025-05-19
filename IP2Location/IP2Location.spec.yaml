@@ -11,7 +11,7 @@ servers:
 paths:
   /: 
     get:
-      operationId: GetIpFromIP2LocationAPI 
+      operationId: GetIpFromIP2Location 
       description: Retrieves detailed information for a given IP address using the IP2Location service. 
       parameters:
         - in: query
@@ -25,7 +25,7 @@ paths:
             type: string
           required: true
       responses:
-        '200':
+        "200":
           description: Successful response containing IP information.
           content:
             application/json:
