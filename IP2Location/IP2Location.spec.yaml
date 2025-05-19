@@ -6,26 +6,22 @@ info:
   version: "1.0.0" 
 
 servers:
-    - url: https://httpbin.org/
+  - url: https://api.ip2location.io
 
 paths:
-    /basic-auth/{user}/{passwd}:
-        operationId: TestBasicAuth
-        get: 
-            summary: Prompts the user for authorization using HTTP Basic 
-            parameters:
-                - in: path 
-                  name: user
-                  schema:
-                      type: string
-                  required: true
-                - in: path
-                  name: passwd 
-                  schema:
-                      type: string
-                  required: true
-            responses:
-                200:
-                    description: Successful authentication. 
-                401:
-                    description: Unsuccessful authentication.
+  /: 
+    get:
+      operationId: getIpInformation 
+      summary: Get IP address information (geo, proxy, VPN).
+      description: Retrieves detailed information for a given IP address using the IP2Location service. 
+      parameters:
+        - in: query
+          name: ip
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response containing IP information.
+          content:
+            application/json:
