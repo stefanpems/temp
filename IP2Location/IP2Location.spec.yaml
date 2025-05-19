@@ -8,6 +8,16 @@ info:
 servers:
   - url: https://api.ip2location.io
 
+components:
+  securitySchemes:
+    ApiKeyAuth: 
+      type: APIKey
+      in: query 
+      name: key 
+
+security:
+  - ApiKeyAuth: [] 
+
 paths:
   /: 
     get:
