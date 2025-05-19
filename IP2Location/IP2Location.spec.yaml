@@ -1,0 +1,27 @@
+openapi: 3.0.0
+
+info:
+  title: IP2LocationAPI
+  description: OpenAPI specification for IP2Location web service to get IP information (geo, proxy, VPN) using the correct base endpoint.
+  version: "1.0.0" 
+
+servers:
+  - url: https://api.ip2location.io
+
+paths:
+  /: 
+    get:
+      operationId: getIpInformation 
+      summary: Get IP address information (geo, proxy, VPN).
+      description: Retrieves detailed information for a given IP address using the IP2Location service. 
+      parameters:
+        - in: query
+          name: ip
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response containing IP information.
+          content:
+            application/json:
