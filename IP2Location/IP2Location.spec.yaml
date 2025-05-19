@@ -12,7 +12,6 @@ paths:
   /: 
     get:
       operationId: getIpInformation 
-      summary: Get IP address information (geo, proxy, VPN).
       description: Retrieves detailed information for a given IP address using the IP2Location service. 
       parameters:
         - in: query
