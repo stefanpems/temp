@@ -11,21 +11,17 @@ servers:
 paths:
   /: 
     get:
-      operationId: GetIpFromIP2Location 
+      operationId: getIpInformation 
+      summary: Get IP address information (geo, proxy, VPN).
       description: Retrieves detailed information for a given IP address using the IP2Location service. 
       parameters:
-        - in: query
-          name: key
-          schema:
-            type: string
-          required: true
         - in: query
           name: ip
           schema:
             type: string
           required: true
       responses:
-        "200":
+        '200':
           description: Successful response containing IP information.
           content:
             application/json:
