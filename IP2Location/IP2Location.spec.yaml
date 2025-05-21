@@ -2,7 +2,7 @@ openapi: 3.0.0
 
 info:
   title: IP2LocationAPI
-  description: OpenAPI specification for IP2Location web service to get IP information (geo, proxy, VPN) using the correct base endpoint.
+  description: OpenAPI specification for IP2Location web service to get IP location information.
   version: "1.0.0" 
 
 servers:
